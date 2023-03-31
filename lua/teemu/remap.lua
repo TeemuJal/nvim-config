@@ -15,6 +15,8 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
+-- <C-v> is somehow the same as <C-ö> in nordic keyboard (visual block mode, <C-q> also works)
+vim.keymap.set("n", "<C-v>", "<nop>")
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
