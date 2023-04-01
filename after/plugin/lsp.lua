@@ -19,7 +19,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
     ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4), -- TODO: this doesn't work
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
 })
 

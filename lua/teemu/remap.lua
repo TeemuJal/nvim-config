@@ -15,14 +15,19 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
--- <C-v> is somehow the same as <C-ö> in nordic keyboard (visual block mode, <C-q> also works)
-vim.keymap.set("n", "<C-v>", "<nop>")
+vim.keymap.set({ "n", "v" }, "<C-z>", "<nop>")
+-- Alternate file. <C-]> the same as nordic <C-¨>
+vim.keymap.set("n", "<C-]>", "<C-^>")
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format()
 end)
 
 -- Replace word on cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Paragraph moving
+vim.keymap.set({ "n", "v" }, "å", "}")
+vim.keymap.set({ "n", "v" }, "¨", "{")
 
 -- TODO: make this work in WSL
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
