@@ -34,7 +34,7 @@ vim.keymap.set({ "n", "v" }, "¨", "{")
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- These don't work in WSL
---vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y")
 
 -- TODO: make this work somehow in WSL
 --vim.keymap.set("v", "<leader>y", function()
