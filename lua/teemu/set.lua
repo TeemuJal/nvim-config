@@ -30,3 +30,7 @@ vim.opt.guicursor:append("a:blinkon1")
 
 vim.g.mapleader = " "
 
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.hidden = true
