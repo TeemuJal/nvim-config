@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -27,8 +30,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.guicursor:append("a:blinkon1")
-
-vim.g.mapleader = " "
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
