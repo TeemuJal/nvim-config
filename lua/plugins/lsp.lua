@@ -19,7 +19,7 @@ return {
 		  "L3MON4D3/LuaSnip",             -- Required
 		  "rafamadriz/friendly-snippets", -- Optional
   },
-  config = function() 
+  config = function()
     local lsp = require('lsp-zero')
 
     lsp.preset("recommended")
@@ -29,7 +29,7 @@ return {
 
     lsp.ensure_installed({
         'ts_ls',
-        'eslint',
+        'eslint@4.8.0',
         'lua_ls',
         'rust_analyzer',
     })
@@ -128,7 +128,7 @@ return {
 
     local lspconfig = require("lspconfig")
 
-    lspconfig.ts_ls.setup({ 
+    lspconfig.ts_ls.setup({
       root_dir = lspconfig.util.root_pattern(".git")
     })
 
