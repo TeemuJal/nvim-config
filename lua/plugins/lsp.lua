@@ -77,32 +77,18 @@ return {
     end
 
     local function on_list(options)
-      local items = options.items
-      if #items > 1 then
-        items = filter(items, filterReactDTS)
-        items = filter(items, filterNodeModules)
+      local filteredItems = options.items
+      if #filteredItems > 1 then
+        filteredItems = filter(filteredItems, filterReactDTS)
+        filteredItems = filter(filteredItems, filterNodeModules)
       end
 
-      --if #items > 1 then
-        vim.fn.setqflist({}, ' ', { title = options.title, items = items, context = options.context })
-        vim.api.nvim_command('cfirst') -- or maybe you want 'copen' instead of 'cfirst'
-      --end
-
-      --if #items == 1 then
-      --  local filename = items[1]["filename"]
-      --  local formattedFilename = string.gsub(filename, "\\", "/")
-      --  local lnum = items[1]["lnum"]
-      --  local col = items[1]["col"]
-      --  local currentFilename = vim.api.nvim_buf_get_name(0)
-      --  local formattedCurrentFilename = string.gsub(currentFilename, "\\", "/")
-      --  if formattedFilename ~= formattedCurrentFilename then
-      --    -- TODO: adds an extra entry to jumplist, keepjumps seems to mess everything up
-      --    vim.cmd("edit " .. filename)
-      --  end
-      --  --vim.cmd(string.format("call cursor(%s, %s)", lnum, col))
-      --  vim.cmd(string.format("normal %sG%s|", lnum, col))
-      --end
-
+      if #filteredItems > 0 then
+        vim.fn.setloclist(0, {}, ' ', { title = options.title, items = filteredItems, context = options.context })
+      else
+        vim.fn.setloclist(0, {}, ' ', { title = options.title, items = options.items, context = options.context })
+      end
+      vim.api.nvim_command('lfirst') -- or maybe you want 'copen' instead of 'cfirst'
     end
 
     lsp.on_attach(function(client, bufnr)
