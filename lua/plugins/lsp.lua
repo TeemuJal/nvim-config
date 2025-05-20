@@ -4,8 +4,8 @@ return {
   dependencies = {
 		  -- LSP Support
 		  "neovim/nvim-lspconfig",             -- Required
-		  "williamboman/mason.nvim",           -- Optional
-		  "williamboman/mason-lspconfig.nvim", -- Optional
+      { "williamboman/mason.nvim", commit = "0f6fea935578039a271cdb52a5fdfcc58474bc5d" },           -- Optional
+      { "williamboman/mason-lspconfig.nvim", commit = "f995805" }, -- Optional
 
 		  -- Autocompletion
 		  "hrsh7th/nvim-cmp",         -- Required
