@@ -32,6 +32,7 @@ return {
         'eslint@4.8.0',
         'lua_ls',
         'rust_analyzer',
+        'gopls',
     })
 
     local cmp = require('cmp')
