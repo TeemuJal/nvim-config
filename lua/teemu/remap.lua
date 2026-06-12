@@ -30,6 +30,10 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set({ "n", "v" }, "å", "}")
 vim.keymap.set({ "n", "v" }, "¨", "{")
 
+vim.keymap.set('n', '<leader>cp', function()
+  vim.fn.setreg('*', vim.fn.expand('%'))
+end, { desc = 'Copy file path to clipboard' })
+
 -- TODO: make this work in WSL
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
